@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Belajar</title>
+    <style>
+        /* Gradasi hijau muda ke hitam */
+        body {
+            background: linear-gradient(to right, #b3e6b1, #2d2d2d);
+            color: #f0f0f0;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Header */
+        header {
+            text-align: center;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin: 0;
+            color: #4d4d4d;
+        }
+
+        /* Section styling */
+        section {
+            margin: 20px auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 8px;
+            width: 90%;
+            max-width: 600px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            color: #4d4d4d;
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 1.8rem;
+        }
+
+        /* Input styling */
+        input[type="number"], input[type="text"] {
+            padding: 10px;
+            font-size: 1rem;
+            margin: 10px 0;
+            width: 100%;
+            border: 1px solid #b3e6b1;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+
+        /* Timer container */
+        .timer {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        #time-display {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        /* Tombol */
+        .timer-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 1rem;
+            background-color: #8fd19e;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #70c28f;
+        }
+
+        /* To-do list */
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            background-color: rgba(255, 255, 255, 0.7);
+            margin: 5px 0;
+            padding: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>Pomodoro Timer & To Do List</h1>
+    </header>
+
+    <!-- Pomodoro Timer Section -->
+    <section id="pomodoro">
+        <h2>Pomodoro Timer</h2>
+        
+        <label for="session-time">Waktu Belajar (menit):</label>
+        <input type="number" id="session-time" value="25" min="1" max="60">
+        
+        <label for="break-time">Waktu Istirahat (menit):</label>
+        <input type="number" id="break-time" value="5" min="1" max="60">
+        
+        <!-- Timer display -->
+        <div class="timer">
+            <h3 id="time-display">25:00</h3>
+            <!-- Tombol di bawah timer -->
+            <div class="timer-buttons">
+                <button id="start-btn">Start</button>
+                <button id="reset-btn">Reset</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- To-Do List Section -->
+    <section id="todo">
+        <h2>To-Do List</h2>
+        <input type="text" id="todo-input" placeholder="Tambah target belajar...">
+        <button id="add-btn">Tambah</button>
+        <ul id="todo-list"></ul>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
